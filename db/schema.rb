@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_17_235022) do
+ActiveRecord::Schema.define(version: 2019_07_18_041731) do
 
   create_table "channels", force: :cascade do |t|
     t.string "title"
@@ -34,7 +34,9 @@ ActiveRecord::Schema.define(version: 2019_07_17_235022) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "discussion_id"
+    t.integer "user_id"
     t.index ["discussion_id"], name: "index_replies_on_discussion_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
