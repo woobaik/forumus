@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :discussions
+  resources :discussions do
+    resources :replies
+  end
   resources :channels
   get 'channel/title'
   devise_for :users
