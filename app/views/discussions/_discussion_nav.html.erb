@@ -1,0 +1,9 @@
+<div class="notification">
+  <nav class="breadcrumb has-arrow-separator is-centered" aria-label="breadcrumbs">
+    <ul>
+      <li> <%= link_to 'Forumus', root_path %> </li> 
+      <li> <%= link_to @discussion.channel.title, channel_path(@discussion.channel) %></li>
+      <li> <%= link_to @discussion.title, discussion_path(@discussion), class: 'is-active' %></li>
+    </ul>
+</nav>    
+</div>
