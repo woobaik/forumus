@@ -14,13 +14,21 @@
 *= require_self
 */
 @import "bulma";
-
+$button-padding-horizontal: 5rem;
  
  body {
      background-color: #F6F7F8;
+     font-family: 'Literata', serif;
  }
  .app-main-header {
      vertical-align: middle;
  }
 
+ .columns {
+     margin: 0;
+ }
+
+ .login-helper-button {
+    padding-bottom: 10px;
+}
  
