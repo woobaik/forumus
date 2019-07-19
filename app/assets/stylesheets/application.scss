@@ -15,10 +15,15 @@
 */
 @import "bulma";
 $button-padding-horizontal: 5rem;
+
  
  body {
      background-color: #F6F7F8;
      font-family: 'Literata', serif;
+ }
+
+ .navbar{
+     margin-bottom: 2rem;
  }
  .app-main-header {
      vertical-align: middle;

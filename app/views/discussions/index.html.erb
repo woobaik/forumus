@@ -1,6 +1,17 @@
 
 
-<h1>Discussions</h1>
+<% @discussions.each do |discussion| %>
+  <article class="message is-warning has-background-white">
+  <div class="message-body">
+    <p class="author-by">Posted by <%= discussion.user.email %> at <%= time_ago_in_words(discussion.created_at)%> ago</p>
+    <hr class="author-body-divider">
+    <p class="discussion-title"> <%= discussion.title %> </p> 
+    <%= truncate(discussion.body, length: 50) %>
+    </div>
+</article>
+
+<% end %>
+
 
 <table>
   <thead>
