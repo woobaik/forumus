@@ -2,42 +2,29 @@
 
 <% @discussions.each do |discussion| %>
   <article class="message is-warning has-background-white">
-  <div class="message-body">
-    <p class="author-by">Posted by <%= discussion.user.email %> at <%= time_ago_in_words(discussion.created_at)%> ago</p>
-    <hr class="author-body-divider">
-    <p class="discussion-title"> <%= discussion.title %> </p> 
-    <%= truncate(discussion.body, length: 50) %>
-    </div>
+   <div class="message-body">
+      <p class="author-by">Posted by <%= discussion.user.email %> 
+    at <%= time_ago_in_words(discussion.created_at)%> ago
+      </p>
+    
+      <hr class="author-body-divider">
+      <p class="discussion-title"> 
+        <%= link_to discussion.title, discussion_path(discussion) %> 
+      </p> 
+      <%= truncate(discussion.body, length: 50) %>
+      <% if current_user && current_user == discussion.user %>
+        <div class="columns">
+          <div class="buttons has-addons column is-4 is-offset-8">
+            <%= link_to 'Edit', edit_discussion_path(discussion), class:"button is-outlined is-success is-small" %>
+            <%= link_to 'Delete', edit_discussion_path(discussion), class:"button is-outlined is-danger is-small", method: :delete, data: { confirm: 'Are you sure?'} %>
+          </div>
+        </div>
+      <% end %>  
+    </div>  
 </article>
 
 <% end %>
 
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>User</th>
-      <th>Channel</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @discussions.each do |discussion| %>
-      <tr>
-        <td><%= discussion.title %></td>
-        <td><%= discussion.body %></td>
-        <td><%= discussion.user.email %></td>
-        <td><%= discussion.channel.title %></td>
-        <td><%= link_to 'Show', discussion %></td>
-        <td><%= link_to 'Edit', edit_discussion_path(discussion) %></td>
-        <td><%= link_to 'Destroy', discussion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
