@@ -15,8 +15,26 @@
 }
 
 .notification {
-    
+    background-color: white !important;
     padding-bottom: 5px;
     padding-top: 5px;
+    margin-top: 24px;
     
+}
+
+.discussion-title {
+    font-size: 1.5rem;
+}
+
+.author-by {
+    font-size: 0.75rem;
+}
+
+.message-body {
+    padding-top: 10px;
+    min-height: 10rem;
+}
+
+.author-body-divider{
+    margin-top: 5px;
 }

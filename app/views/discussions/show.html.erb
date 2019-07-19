@@ -1,23 +1,18 @@
-<%= render 'discussion_nav', class:"jsdflkjsdf"%>
-<p>
-  <strong>Title:</strong>
-  <%= @discussion.title %>
-</p>
+<%= render 'discussion_nav' %>
+<article class="message is-warning">
+  <div class="message-body">
+    <p class="author-by">Posted by <%= @discussion.user.email %> </p>
+    <hr class="author-body-divider">
+    <p class="discussion-title"> <%= @discussion.title %> </p> 
+    <%= @discussion.body %>
+    </div>
+</article>
 
-<p>
-  <strong>Body:</strong>
-  <%= @discussion.body %>
-</p>
+<div class="field">
+  <label class="label">Message</label>
+  <div class="control">
+    <textarea class="textarea" placeholder="Textarea"></textarea>
+  </div>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @discussion.user.email %>
-</p>
 
-<p>
-  <strong>Channel:</strong>
-  <%= @discussion.channel %>
-</p>
-
-<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
-<%= link_to 'Back', discussions_path %>
