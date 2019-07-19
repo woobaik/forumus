@@ -13,23 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import "bulma";
-
-.notification a:not(.button):not(.dropdown-item) {
-    font-family: 'Righteous', cursive;
-    font-size: 20px;
-    color: black;
-    text-decoration: none;
-}
-
-.notification a:not(.button):not(.dropdown-item):hover {
-    color: #52527a;
-    text-decoration: underline;
-}
-
-.notification {
-    
-    padding-bottom: 5px;
-    padding-top: 5px;
-    
-}
+ 
+ @import "bulma";
+ 
