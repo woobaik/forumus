@@ -1,17 +1,26 @@
-
-
 <% @discussions.each do |discussion| %>
-  <article class="message is-warning has-background-white">
-   <div class="message-body">
+  <article class="message is-dark has-background-white">
+    <div class="message-body">
       <p class="author-by">Posted by <%= discussion.user.email %> 
-    at <%= time_ago_in_words(discussion.created_at)%> ago
+         at <%= time_ago_in_words(discussion.created_at)%> ago
       </p>
-    
       <hr class="author-body-divider">
-      <p class="discussion-title"> 
-        <%= link_to discussion.title, discussion_path(discussion) %> 
-      </p> 
-      <%= truncate(discussion.body, length: 50) %>
+      <article class="media">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img src="https://bulma.io/images/placeholders/128x128.png">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <%= link_to discussion.title, discussion_path(discussion), class:"discussion-title" %> 
+            <br>
+            <%= truncate(discussion.body, length: 50 )%>
+          </p>
+        </div>
+  </div>
+  </article>
       <% if current_user && current_user == discussion.user %>
         <div class="columns">
           <div class="buttons has-addons column is-4 is-offset-8">
