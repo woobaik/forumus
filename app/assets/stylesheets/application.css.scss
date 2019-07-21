@@ -24,7 +24,13 @@ $button-padding-horizontal: 5rem;
  }
 
  .navbar{
+     border: 1px solid black;
      margin-bottom: 2rem;
+ }
+
+ .navbar-item:hover {
+     color: #4a4a4a !important;
+     transition: 0.5s;
  }
  .app-main-header {
      vertical-align: middle;

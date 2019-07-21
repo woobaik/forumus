@@ -9,7 +9,9 @@
 li {
     list-style: none;
 }
-
+.card {
+    border-radius: 7px;
+}
 .card-header:hover {
     background-color: #e8f1ff !important;
     transition: 0.5s;
