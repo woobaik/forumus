@@ -5,3 +5,31 @@
 .card-header-title {
     justify-content: center;
 }
+
+li {
+    list-style: none;
+}
+
+.card-header:hover {
+    background-color: #e8f1ff !important;
+    transition: 0.5s;
+}
+
+.card-content {
+    padding: 0 !important;
+}
+
+.channel-discussion-title {
+    color: #43484a;
+}
+
+.channel-discussion-title-empty {
+    color: #43484a;
+}
+
+.channel-discussion-title:hover {
+    border-radius: 5px;
+    background-color: #e8f1ff;
+    color: #43484a;
+    transition: 1s;
+}
