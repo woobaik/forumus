@@ -16,7 +16,10 @@
           <p>
             <%= link_to discussion.title, discussion_path(discussion), class:"discussion-title" %> 
             <br>
-            <%= truncate(discussion.body, length: 50 )%>
+            <p class="has-text-grey">
+              <%= truncate(discussion.body, length: 50 ) %>
+            </p>
+            
           </p>
         </div>
   </div>
