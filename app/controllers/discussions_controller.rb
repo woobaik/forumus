@@ -15,6 +15,8 @@ class DiscussionsController < ApplicationController
   # GET /discussions/new
   def new
     @discussion = Discussion.new
+    
+    @channel =Channel.find(params[:channel_id])
   end
 
   # GET /discussions/1/edit
@@ -25,10 +27,12 @@ class DiscussionsController < ApplicationController
   # POST /discussions.json
   def create
     @discussion = Discussion.new(discussion_params)
+    @discussion.channel_id = params[:channel_id]
+    @discussion.user = User.find(current_user.id)
 
     respond_to do |format|
       if @discussion.save
-        format.html { redirect_to @discussion, notice: 'Discussion was successfully created.' }
+        format.html { redirect_to channel_discussion_path(@discussion.channel_id, @discussion), notice: 'Discussion was successfully created.' }
         format.json { render :show, status: :created, location: @discussion }
       else
         format.html { render :new }

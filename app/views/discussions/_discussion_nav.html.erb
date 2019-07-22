@@ -3,7 +3,7 @@
     <ul>
       <li> <%= link_to 'Forumus', root_path %> </li> 
       <li> <%= link_to @discussion.channel.title, channel_path(@discussion.channel) %></li>
-      <li> <%= link_to @discussion.title, discussion_path(@discussion), class: 'is-active' %></li>
+      <li> <%= link_to @discussion.title, channel_discussion_path(@discussion), class: 'is-active' %></li>
     </ul>
 </nav>    
 </div>

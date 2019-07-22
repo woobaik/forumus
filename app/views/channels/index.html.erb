@@ -15,10 +15,10 @@
             <ul>
               <% channel.discussions.each do |discussion| %>
                 <li> 
-                  <%= link_to discussion_path(discussion) do %>
+                  <%= link_to root_path do %>
                     <div class="channel-discussion-title">
                       <i class="fa fa-comments"></i> 
-                      <%= discussion.title %>
+                      <%= link_to discussion.title, channel_discussion_path(channel, discussion) %>
                     </div>                  
                   <% end %> 
                   
@@ -37,6 +37,7 @@
       <footer class="card-footer">
         <%= link_to 'EDIT', edit_channel_path(channel), class:"card-footer-item" %>
         <%= link_to 'Delete', channel_path(channel), class:"card-footer-item", method: :destroy, data: {confirm: 'Are you sure?'}  %>        
+        <%= link_to 'Add New Discussion', new_channel_discussion_path(channel) %>
       </footer>
   </div>  
  

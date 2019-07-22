@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :discussions do
-    resources :replies
+  resources :channels do 
+    resources :discussions do
+      resources :replies
+    end
   end
-  resources :channels
-  get 'channel/title'
   devise_for :users
   root 'channels#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
