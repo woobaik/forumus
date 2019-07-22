@@ -5,9 +5,10 @@
 
     <ul> 
        <% @channel.discussions.each do |discussion| %>
-         <li> <%= link_to discussion.title, discussion_path(discussion) %> </li>
+         <li> <%= link_to discussion.title, channel_discussion_path(@channel, discussion) %> </li>
        <% end %>
     </ul>
 
 <%= link_to 'Edit', edit_channel_path(@channel) %> |
 <%= link_to 'Back', channels_path %>
+       

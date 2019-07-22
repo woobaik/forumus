@@ -21,10 +21,6 @@ li {
     transition: 0.5s;
 }
 
-.card-content {
-    padding: 0 !important;
-}
-
 .channel-discussion-title a {
     color: #43484a;
 }
@@ -41,7 +37,20 @@ li {
 }
 
 
-.column.is-3, .column.is-3-tablet {display: flex;
+.column.is-3, .column.is-3-tablet {
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    
+}
+
+.card-header {
+    flex: 1;
+}
+
+.card-content {
+    padding: 0 !important;
+    flex: auto;
+}
+.card-footer {
+    flex: 5px;   
 }

@@ -1,6 +1,6 @@
 
 <div class="columns is-multiline">
-  <% @channels.each do |channel|  %>
+  <% @channels.each do |channel|  %>  
    <div class="card column is-3">
           <%= link_to channel_path(channel) do %>
             <header class="card-header">
@@ -34,13 +34,7 @@
           <br>  
         </div>
       </div>
-      <% if current_user && current_user.admin  %>
-        <footer class="card-footer">
-          <%= link_to 'EDIT', edit_channel_path(channel), class:"card-footer-item" %>
-          <%= link_to 'Delete', channel_path(channel), class:"card-footer-item", method: :destroy, data: {confirm: 'Are you sure?'}  %>        
-          <%= link_to 'Add New Discussion', new_channel_discussion_path(channel) %>
-        </footer>      
-      <% end %>
+      
 
   </div>  
  
