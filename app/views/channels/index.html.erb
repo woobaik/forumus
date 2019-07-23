@@ -34,7 +34,12 @@
           <br>  
         </div>
       </div>
-      
+      <% if current_user || current_user.admin %>
+      <div class="card-footer">
+        <button class="card-footer-button">Edit</button>
+        <button class="card-footer-button">Destroy</button>
+      </div>
+      <% end %>
 
   </div>  
  

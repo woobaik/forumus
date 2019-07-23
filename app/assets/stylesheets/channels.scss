@@ -51,6 +51,24 @@ li {
     padding: 0 !important;
     flex: auto;
 }
+
 .card-footer {
-    flex: 5px;   
+    border-top: 1px solid black !important;
+    justify-self: flex-end;
+    justify-content: center;
+    background-color: #ccc !important;
+    box-shadow: #43484a;
+    
+}
+
+.card-footer-button {
+    background-color: white;
+    border-radius: 20%;
+    margin: 0.5rem 1rem;
+    padding: 0.2rem 0.5rem;   
+}
+
+.card-footer-button:hover {
+    background-color: #fffcf5;
+    transition: 0.5s;
 }
