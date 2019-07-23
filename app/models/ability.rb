@@ -7,7 +7,7 @@ class Ability
     can :read, :all
 
     if user.present?  # additional permissions for logged in users (they can read their own posts)
-      can :manage, [Channel, Discussion, Reply], user_id: user.id
+      can :read, [Channel, Discussion, Reply], user_id: user.id
       
       if user.admin?  # additional permissions for administrators
         can :manage, :all
