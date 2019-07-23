@@ -1,16 +1,4 @@
-<section class="hero is-dark signup-hero">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Sign up
-      </h1>
-      <h2 class="subtitle">
-        Forumus - anything you can discuss
-      </h2>
-    </div>
-  </div>
-</section>
-
+<%= render partial: 'layouts/hero_header', locals: { name: 'Sign Up', color: 'is-info' } %>
 <br>
 
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -37,6 +25,7 @@
           <i class="fa fa-lock"></i>
         </span>
       </p>
+      <p class="help is-dark">Minimum 6 character required</p>
     </div>
     <br>
     <div class="field">
