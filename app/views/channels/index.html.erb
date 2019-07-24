@@ -1,7 +1,7 @@
 <%= render partial: 'layouts/hero_header', locals: {name: Forumus, color: 'is-dark'}%>
 <div class="columns is-multiline">
   <% @channels.each do |channel|  %>  
-   <div class="card column is-3">
+    <div class="card column is-3">
           <%= link_to channel_path(channel) do %>
             <header class="card-header">
               <p class="card-header-title">
