@@ -20,7 +20,7 @@ li {
 
 .columns {
     display: flex;
-    justify-content: space-between
+    justify-content: flex-start;
 }
 .card {
     border-radius: 7px;

@@ -17,6 +17,12 @@
       <%= login_button_helper %>  
     </div>
   </div>
+ <% elsif current_user && @discussion.replies.count == 0 %>  
+  <div class="no-reply-message-box">
+    <span calss="">
+      There is no replies Yet! Take the first reply!
+    </span>
+  </div>
 <% end %>
 
 <br>
