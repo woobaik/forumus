@@ -29,6 +29,10 @@
     </div>
   <% end %>
   <%= render partial: 'replies/form', locals: {discussion: @discussion, channel: @discussion.channel} %>
+
+  <div class="discussion-reply">
+    <%= render @discussion.replies %>
+  </div>
 </article>
 
 
