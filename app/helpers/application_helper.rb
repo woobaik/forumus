@@ -1,4 +1,7 @@
 module ApplicationHelper
+    include LetterAvatar::AvatarHelper
+    
+
     def login_button_helper
         if current_user 
             (link_to "Account", edit_user_registration_path, class:'button login-helper-button is-outlined login-helper-acct') +

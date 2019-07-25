@@ -68,3 +68,14 @@ $button-padding-horizontal: 5rem;
     border-radius: 10px;
     background-color: #ccc;
 }
+.author-by {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 10px;
+}

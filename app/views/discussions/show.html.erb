@@ -1,13 +1,17 @@
 <%= render 'discussion_nav' %>
+
 <article class="message is-dark has-background-white">
   <div class="message-body">
-    <p class="author-by">Posted by <%= @discussion.user.email %> </p>
+    <p class="author-by">Posted by <%= @discussion.user.email %>  <span>  &nbsp <%= avatar_helper(@discussion.user) %> </span></p>
     <hr class="author-body-divider">
     <p class="discussion-title"> <%= @discussion.title %> </p> 
     <%= @discussion.body %>
+    <hr>
+    <p class="author-by"> &nbsp <%= avatar_helper(@discussion.user) %> &nbsp &nbsp &nbsp &nbsp<%= @discussion.user.email %>
+      <%= timestamp_helper(@discussion) %>
+    </p>
   </div>
-  <br>
-  <hr>
+
   <% if !current_user %>
     <div class="reply-login columns">
       <span class="reply-login-text column is-6 is-offset-2"> 
