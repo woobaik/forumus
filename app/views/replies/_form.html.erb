@@ -1,0 +1,9 @@
+<%= form_with scope: :replies, url: new_channel_discussion_reply_path(channel, discussion), class:"reply-form" do |f| %>
+    <div class="field">
+        <label class="label">Reply</label>
+        <div class="control">
+            <%= f.text_field :title, class:"textarea", placeholder: "Share Your Thought Here" %>
+        </div>
+    </div>
+        <button class="button is-primary">Submit</button>
+<% end %>

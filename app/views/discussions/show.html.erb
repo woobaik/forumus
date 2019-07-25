@@ -5,28 +5,29 @@
     <hr class="author-body-divider">
     <p class="discussion-title"> <%= @discussion.title %> </p> 
     <%= @discussion.body %>
+  </div>
+  <br>
+  <hr>
+  <% if !current_user %>
+    <div class="reply-login columns">
+      <span class="reply-login-text column is-6 is-offset-2"> 
+        What are your thoughts? Log in or Sign up
+      </span>
+      <div class="reply-login-buttons column is-4">
+        <%= login_button_helper %>  
+      </div>
     </div>
+  <% elsif current_user && @discussion.replies.count == 0 %>  
+    <div class="no-reply-message-box">
+      <span calss="">
+        There is no replies Yet! Take the first reply!
+      </span>
+    </div>
+  <% end %>
+  <%= render partial: 'replies/form', locals: {discussion: @discussion, channel: @discussion.channel} %>
 </article>
 
-<% if !current_user %>
-  <div class="reply-login columns">
-    <span class="reply-login-text column is-6 is-offset-2"> 
-      What are your thoughts? Log in or Sign up
-    </span>
-    <div class="reply-login-buttons column is-4">
-      <%= login_button_helper %>  
-    </div>
-  </div>
- <% elsif current_user && @discussion.replies.count == 0 %>  
-  <div class="no-reply-message-box">
-    <span calss="">
-      There is no replies Yet! Take the first reply!
-    </span>
-  </div>
-<% end %>
 
-<br>
-<hr>
 <div class="is-divider" data-content="OR"></div>
 <div class="is-divider" data-content="OR"></div>
 <div class="is-divider" data-content="OR"></div>

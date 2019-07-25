@@ -31,7 +31,7 @@
 }
 
 .message-body {
-    padding-top: 10px;
+    
     min-height: 10rem;
 }
 
@@ -64,4 +64,9 @@
     border: 1px solid #ccc;
     padding: 1rem;
     border-radius: 5px;
+    margin: 1rem;
+}
+
+.reply-form {
+    padding: 1rem 3rem;
 }
