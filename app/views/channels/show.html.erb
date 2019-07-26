@@ -1,31 +1,36 @@
 <%= render partial: 'layouts/hero_header', locals: {name: @channel.title, color: 'is-warning'} %>
 
 
-    <ul> 
-       <% @channel.discussions.each do |discussion| %>
-         <li> <%= link_to discussion.title, channel_discussion_path(@channel, discussion) %> </li>
-       <% end %>
-    </ul>
+<table class="table is-striped is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th><abbr title="Title">Title</abbr></th>
+      <th><abbr title="Body">Body</abbr></th>
+      <th><abbr title="Author">Author</abbr></th>
+      <th><abbr title="Creation Date">Creation Date</abbr></th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+        <th><abbr title="Title">Title</abbr></th>
+        <th><abbr title="Body">Body</abbr></th>
+        <th><abbr title="Author">Author</abbr></th>
+        <th><abbr title="Creation Date">Creation Date</abbr></th>
+      </tr>
+  </tfoot>
+  <tbody>
+    <% @channel.discussions.each do |discussion|%>
+      <tr class="discussion-row">
+        <th> <%= link_to discussion.title, channel_discussion_path(@channel, discussion) %> </th>
+        <th> <%= link_to discussion.body.truncate(30, separator: ' '), channel_discussion_path(@channel, discussion) %> </th>
+        <th> <%= discussion.user.email %></th>
+        <th> <%= discussion.created_at.strftime("%m/%d/%Y %H:%M") %></th>
+      </tr>
+    <% end %>
+  <tbody> 
+
+</table>
 
 <%= link_to 'New', new_channel_discussion_path(@channel) %> |
 <%= link_to 'Edit', edit_channel_path(@channel) %> |
 <%= link_to 'Back', channels_path %>
-       
-
-<article class="message is-dark reply-box">
-    <div class="message-header reply-header">
-        <div class="reply-left">
-            <p><%= avatar_helper(reply.user) %></p>
-            &nbsp &nbsp &nbsp &nbsp
-            <p class="reply-header-user-email"><%= reply.user.email %> </p>
-        </div>
-        <div>
-            <p> <%= time_ago_in_words(reply.created_at)%> </p>
-        </div>
-        
-  </div>
-  <div class="message-body">
-    <%= reply.reply%>
-  </div>
-</article>
-
