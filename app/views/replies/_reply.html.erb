@@ -1,16 +1,31 @@
-<article class="message is-dark reply-box">
-    <div class="message-header reply-header">
-        <div class="reply-left">
-            <p><%= avatar_helper(reply.user) %></p>
-            &nbsp &nbsp &nbsp &nbsp
-            <p class="reply-header-user-email"><%= reply.user.email %> </p>
-        </div>
-        <div>
-            <p> <%= time_ago_in_words(reply.created_at)%> </p>
-        </div>
-        
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <%= avatar_helper(reply.user) %>
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong><%= reply.user.email %></strong> <small><%= time_ago_in_words(reply.created_at)%></small>
+        <br>
+        <%= reply.reply %>
+      </p>
+    </div>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-reply"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-heart"></i></span>
+        </a>
+      </div>
+    </nav>
   </div>
-  <div class="message-body">
-    <%= reply.reply%>
+  <div class="media-right">
+    <button class="delete"></button>
   </div>
 </article>
+<hr>
+

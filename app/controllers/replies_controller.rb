@@ -1,4 +1,5 @@
 class RepliesController < ApplicationController
+    before_action :authenticate_user!, only: [:create, :destroy]
     def create
         @discussion = Discussion.find(params[:discussion_id])
         @reply = @discussion.replies.create(params.require(:reply).permit(:reply))        

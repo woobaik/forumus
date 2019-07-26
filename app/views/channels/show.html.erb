@@ -1,7 +1,5 @@
-<p>
-  <h2 class="title is-2 has-text-grey">  <%= @channel.title %></h2>
+<%= render partial: 'layouts/hero_header', locals: {name: @channel.title, color: 'is-warning'} %>
 
-</p>
 
     <ul> 
        <% @channel.discussions.each do |discussion| %>
@@ -13,3 +11,21 @@
 <%= link_to 'Edit', edit_channel_path(@channel) %> |
 <%= link_to 'Back', channels_path %>
        
+
+<article class="message is-dark reply-box">
+    <div class="message-header reply-header">
+        <div class="reply-left">
+            <p><%= avatar_helper(reply.user) %></p>
+            &nbsp &nbsp &nbsp &nbsp
+            <p class="reply-header-user-email"><%= reply.user.email %> </p>
+        </div>
+        <div>
+            <p> <%= time_ago_in_words(reply.created_at)%> </p>
+        </div>
+        
+  </div>
+  <div class="message-body">
+    <%= reply.reply%>
+  </div>
+</article>
+

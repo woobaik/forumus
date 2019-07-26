@@ -28,16 +28,12 @@
       </span>
     </div>
   <% end %>
-  <%= render partial: 'replies/form', locals: {discussion: @discussion, channel: @discussion.channel} %>
+  <% if current_user %>
+    <%= render partial: 'replies/form', locals: {discussion: @discussion, channel: @discussion.channel} %>
+  <% end %>
+  
 
   <div class="discussion-reply">
     <%= render @discussion.replies %>
   </div>
 </article>
-
-
-<div class="is-divider" data-content="OR"></div>
-<div class="is-divider" data-content="OR"></div>
-<div class="is-divider" data-content="OR"></div>
-<div class="is-divider" data-content="OR"></div>
-<div class="is-divider" data-content="OR"></div>
